@@ -6,6 +6,7 @@ import android.view.View;
 /**
  * Created by chentaikang on 2017/1/16 15:25.
  */
+//懒加载
 public abstract class LazyFragment extends BaseFragment{
 
     protected boolean isCreated;//是否创建
@@ -35,6 +36,7 @@ public abstract class LazyFragment extends BaseFragment{
         if(needInit){
             init();
         }
+        isCreated = true;
     }
     private void init() {
         onInitView(mRootView);

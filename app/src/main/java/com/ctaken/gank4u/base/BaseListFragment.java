@@ -63,7 +63,7 @@ public abstract class BaseListFragment extends LazyFragment {
         mRecycleView.setHasFixedSize(true);
         mRecycleView.setLayoutManager(new LinearLayoutManager(getContext()));
         mAdapter = getAdapter();
-        if(mAdapter!=null){
+        if(mAdapter!=null)
             mRecycleView.setAdapter(mAdapter);
             mSwipeRefreshView.setOnRefreshListener(new SwipeRefreshLayout.OnRefreshListener() {
                 @Override
@@ -102,7 +102,7 @@ public abstract class BaseListFragment extends LazyFragment {
             });
             mSwipeRefreshView.setRefreshing(true);
             loadData();
-        }
+
     }
 
 

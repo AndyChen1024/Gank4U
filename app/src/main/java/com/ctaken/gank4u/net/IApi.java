@@ -10,6 +10,7 @@ import retrofit2.http.FormUrlEncoded;
 import retrofit2.http.GET;
 import retrofit2.http.POST;
 import retrofit2.http.Path;
+import rx.Observable;
 
 /**
  * Created by chentaikang on 2017/1/16 12:39.
@@ -24,7 +25,7 @@ public interface IApi {
     );
 
     @GET("data/{type}/{size}/{page}")
-    Call<BaseResult<List<ClassifyBean>>> listAllRx(
+    Observable<BaseResult<List<ClassifyBean>>> listAllRx(
             @Path("type") String type,
             @Path("size") int size,
             @Path("page") int page

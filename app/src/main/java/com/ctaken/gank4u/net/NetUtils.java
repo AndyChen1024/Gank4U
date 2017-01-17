@@ -60,7 +60,7 @@ public class NetUtils {
     private Retrofit retrofit;
     private IApi mApi;
 
-    public IApi getmApi(){
+    public IApi getApi(){
         if(mApi ==null)
             mApi = retrofit.create(IApi.class);
         return mApi;
