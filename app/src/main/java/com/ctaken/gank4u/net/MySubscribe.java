@@ -2,8 +2,6 @@ package com.ctaken.gank4u.net;
 
 import android.content.Context;
 
-import com.ctaken.gank4u.dialog.LoadingDialog;
-
 import rx.Subscriber;
 
 
@@ -18,13 +16,12 @@ public abstract class MySubscribe<T> extends Subscriber<T> {
     }
 
     private Context context;
-    private LoadingDialog dialog;
+
 
     @Override
     public void onStart() {
         super.onStart();
-        dialog = new LoadingDialog(context);
-        dialog.show();
+
     }
 
     @Override
@@ -45,7 +42,7 @@ public abstract class MySubscribe<T> extends Subscriber<T> {
 
     @Override
     public void onNext(T t) {
-        dialog.dismiss();
+
     }
     //出现错误直接调用 自定义的onError
     public abstract void onError(ExceptionHandle.ResponseThrowable e);
