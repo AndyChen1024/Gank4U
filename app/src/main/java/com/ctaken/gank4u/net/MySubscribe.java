@@ -16,6 +16,7 @@ public abstract class MySubscribe<T> extends Subscriber<T> {
     public MySubscribe(Context context) {
         this.context = context;
     }
+
     private Context context;
     private LoadingDialog dialog;
 

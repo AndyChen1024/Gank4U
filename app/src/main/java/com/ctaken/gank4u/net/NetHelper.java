@@ -28,12 +28,12 @@ public class NetHelper {
             public Object call(Object observable) {
                 return ((Observable) observable)
                         .map(new HandlerFuc<T>())//数据类型转换,取出真正的业务数据
-                        .onErrorResumeNext(new HttpResopnseFunc<T>());//处理异常
+                        .onErrorResumeNext(new HttpResponseFunc<T>());//处理异常
             }
         };
     }
 
-    private static class HttpResopnseFunc<T> implements Func1<Throwable,Observable<T>> {
+    private static class HttpResponseFunc<T> implements Func1<Throwable,Observable<T>> {
 
         @Override
         public Observable<T> call(Throwable t) {

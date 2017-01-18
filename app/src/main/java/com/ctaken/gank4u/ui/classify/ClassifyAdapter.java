@@ -26,7 +26,7 @@ public class ClassifyAdapter extends BaseRecycleAdapter<ClassifyBean> {
     public RequestManager requestManager;
 
     public static final int TYPE_ICON = 0;
-    public static final int TYPR_NO_ICON = 1;
+    public static final int TYPE_NO_ICON = 1;
 
     public ClassifyAdapter(Context context, ArrayList<ClassifyBean> data, RequestManager requestManager) {
         super(context, data);
@@ -41,8 +41,9 @@ public class ClassifyAdapter extends BaseRecycleAdapter<ClassifyBean> {
             case TYPE_ICON:
                 view = inflater.inflate(R.layout.item_classify_icon, parent, false);
                 return new ClassifyIconHolder(view, requestManager);
-            case TYPR_NO_ICON:
+            case TYPE_NO_ICON:
                 view = inflater.inflate(R.layout.item_classify,parent,false);
+                return new ClassifyHolder(view);
         }
         return null;
     }
@@ -53,7 +54,7 @@ public class ClassifyAdapter extends BaseRecycleAdapter<ClassifyBean> {
         if(images!=null && images.size()>0){
             return TYPE_ICON;
         }else {
-            return TYPR_NO_ICON;
+            return TYPE_NO_ICON;
         }
     }
 
